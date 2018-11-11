@@ -15,9 +15,18 @@
 		5A5B00142198C74A001035B5 /* RealmPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A5B00042198C74A001035B5 /* RealmPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A5B00172198C74A001035B5 /* RealmPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5B00022198C74A001035B5 /* RealmPlatform.framework */; };
 		5A5B00182198C74A001035B5 /* RealmPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5B00022198C74A001035B5 /* RealmPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A5B00202198C8F2001035B5 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B001F2198C8F2001035B5 /* UserUseCase.swift */; };
+		5A5B00202198C8F2001035B5 /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B001F2198C8F2001035B5 /* UsersUseCase.swift */; };
 		5A5B00222198C92E001035B5 /* CommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00212198C92E001035B5 /* CommentsUseCase.swift */; };
 		5A5B00242198C940001035B5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00232198C940001035B5 /* Comment.swift */; };
+		5A5B00282198CB3C001035B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00262198CB3C001035B5 /* Network.swift */; };
+		5A5B00292198CB3C001035B5 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00272198CB3C001035B5 /* NetworkProvider.swift */; };
+		5A5B002C2198CBC9001035B5 /* PostsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B002B2198CBC9001035B5 /* PostsNetwork.swift */; };
+		5A5B002F2198CD8C001035B5 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B002E2198CD8C001035B5 /* UseCaseProvider.swift */; };
+		5A5B00312198CEF5001035B5 /* PostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00302198CEF5001035B5 /* PostsUseCase.swift */; };
+		5A5B00332198CF10001035B5 /* UsersNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00322198CF10001035B5 /* UsersNetwork.swift */; };
+		5A5B00352198CF22001035B5 /* CommentsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00342198CF22001035B5 /* CommentsNetwork.swift */; };
+		5A5B00372198D45D001035B5 /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00362198D45D001035B5 /* UsersUseCase.swift */; };
+		5A5B00392198D469001035B5 /* CommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B00382198D469001035B5 /* CommentsUseCase.swift */; };
 		5A5BFF7B21989544001035B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7A21989544001035B5 /* AppDelegate.swift */; };
 		5A5BFF7D21989544001035B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7C21989544001035B5 /* ViewController.swift */; };
 		5A5BFF8021989544001035B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7E21989544001035B5 /* Main.storyboard */; };
@@ -152,9 +161,18 @@
 		5A5B000A2198C74A001035B5 /* RealmPlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmPlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5B00112198C74A001035B5 /* RealmPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlatformTests.swift; sourceTree = "<group>"; };
 		5A5B00132198C74A001035B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A5B001F2198C8F2001035B5 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
+		5A5B001F2198C8F2001035B5 /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
 		5A5B00212198C92E001035B5 /* CommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUseCase.swift; sourceTree = "<group>"; };
 		5A5B00232198C940001035B5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5A5B00262198CB3C001035B5 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5A5B00272198CB3C001035B5 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		5A5B002B2198CBC9001035B5 /* PostsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetwork.swift; sourceTree = "<group>"; };
+		5A5B002E2198CD8C001035B5 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		5A5B00302198CEF5001035B5 /* PostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsUseCase.swift; sourceTree = "<group>"; };
+		5A5B00322198CF10001035B5 /* UsersNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersNetwork.swift; sourceTree = "<group>"; };
+		5A5B00342198CF22001035B5 /* CommentsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsNetwork.swift; sourceTree = "<group>"; };
+		5A5B00362198D45D001035B5 /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
+		5A5B00382198D469001035B5 /* CommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUseCase.swift; sourceTree = "<group>"; };
 		5A5BFF7721989544001035B5 /* PostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5BFF7A21989544001035B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5BFF7C21989544001035B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +321,36 @@
 			path = RealmPlatformTests;
 			sourceTree = "<group>";
 		};
+		5A5B00252198CB3C001035B5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B00262198CB3C001035B5 /* Network.swift */,
+				5A5B00272198CB3C001035B5 /* NetworkProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5A5B002A2198CBA1001035B5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B002B2198CBC9001035B5 /* PostsNetwork.swift */,
+				5A5B00322198CF10001035B5 /* UsersNetwork.swift */,
+				5A5B00342198CF22001035B5 /* CommentsNetwork.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5A5B002D2198CD75001035B5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B002E2198CD8C001035B5 /* UseCaseProvider.swift */,
+				5A5B00302198CEF5001035B5 /* PostsUseCase.swift */,
+				5A5B00362198D45D001035B5 /* UsersUseCase.swift */,
+				5A5B00382198D469001035B5 /* CommentsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		5A5BFF6E21989544001035B5 = {
 			isa = PBXGroup;
 			children = (
@@ -406,7 +454,7 @@
 			children = (
 				5A5BFFD72198C5AC001035B5 /* UseCaseProvider.swift */,
 				5A5BFFD92198C627001035B5 /* PostsUseCase.swift */,
-				5A5B001F2198C8F2001035B5 /* UserUseCase.swift */,
+				5A5B001F2198C8F2001035B5 /* UsersUseCase.swift */,
 				5A5B00212198C92E001035B5 /* CommentsUseCase.swift */,
 			);
 			path = UseCases;
@@ -415,6 +463,9 @@
 		5A5BFFE12198C73E001035B5 /* NetworkPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				5A5B002D2198CD75001035B5 /* UseCases */,
+				5A5B002A2198CBA1001035B5 /* API */,
+				5A5B00252198CB3C001035B5 /* Network */,
 				5A5BFFE22198C73E001035B5 /* NetworkPlatform.h */,
 				5A5BFFE32198C73E001035B5 /* Info.plist */,
 			);
@@ -961,7 +1012,7 @@
 				5A5BFFD021989976001035B5 /* User.swift in Sources */,
 				5A5BFFCE2198986B001035B5 /* Post.swift in Sources */,
 				5A5BFFD421989A1D001035B5 /* Address.swift in Sources */,
-				5A5B00202198C8F2001035B5 /* UserUseCase.swift in Sources */,
+				5A5B00202198C8F2001035B5 /* UsersUseCase.swift in Sources */,
 				5A5B00242198C940001035B5 /* Comment.swift in Sources */,
 				5A5BFFD221989A06001035B5 /* Company.swift in Sources */,
 				5A5B00222198C92E001035B5 /* CommentsUseCase.swift in Sources */,
@@ -982,6 +1033,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5B00372198D45D001035B5 /* UsersUseCase.swift in Sources */,
+				5A5B002F2198CD8C001035B5 /* UseCaseProvider.swift in Sources */,
+				5A5B00282198CB3C001035B5 /* Network.swift in Sources */,
+				5A5B00352198CF22001035B5 /* CommentsNetwork.swift in Sources */,
+				5A5B00312198CEF5001035B5 /* PostsUseCase.swift in Sources */,
+				5A5B00292198CB3C001035B5 /* NetworkProvider.swift in Sources */,
+				5A5B00392198D469001035B5 /* CommentsUseCase.swift in Sources */,
+				5A5B002C2198CBC9001035B5 /* PostsNetwork.swift in Sources */,
+				5A5B00332198CF10001035B5 /* UsersNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

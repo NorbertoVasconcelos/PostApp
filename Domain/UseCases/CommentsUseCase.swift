@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 public protocol CommentsUseCase {
-    func comments(for userId: Int) -> Observable<[Comment]>
+    func comments(for postId: Int) -> Observable<[Comment]>
 }
