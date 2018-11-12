@@ -61,27 +61,29 @@ final class PostsViewModel: ViewModelType {
         let posts = self.postsUseCase.posts()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriver(onErrorDriveWith: { cachedPosts }())
             .do(onNext: {
-                let _ = $0.map { self.postsCacheUseCase.save(post: $0).subscribe().disposed(by: self.disposeBag) }
+                let _ = $0.map { self.postsCacheUseCase.save(post: $0).subscribe() }
             })
+            .asDriver(onErrorDriveWith: { cachedPosts }())
         
         
         let comments = self.commentsUseCase.comments()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriver(onErrorDriveWith: { cachedComments }())
             .do(onNext: {
                 let _ = $0.map { self.commentsCacheUseCase.save(comment: $0).subscribe().disposed(by: self.disposeBag) }
             })
+            .asDriver(onErrorDriveWith: { cachedComments }())
+
         
         let users = self.usersUseCase.users()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriver(onErrorDriveWith: { cachedUsers }())
             .do(onNext: {
                 let _ = $0.map { self.usersCacheUseCase.save(user: $0).subscribe().disposed(by: self.disposeBag) }
             })
+            .asDriver(onErrorDriveWith: { cachedUsers }())
+        
         
         let combined = Driver.combineLatest(posts, comments, users) {
             posts, comments, users in
