@@ -73,7 +73,7 @@ class PostsViewController: UIViewController {
         output.selectedPost
             .drive(onNext: {
                 post in
-                print("Selected Post: \(post.title)")
+                print("Selected Post: \(post?.post.title ?? "")")
             })
             .disposed(by: disposeBag)
         

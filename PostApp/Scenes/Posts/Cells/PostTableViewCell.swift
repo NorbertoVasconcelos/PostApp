@@ -13,24 +13,22 @@ import Cartography
 class PostTableViewCell: UITableViewCell {
 
     var container: UIView = UIView()
-    var author: TitleSubtitleView = TitleSubtitleView()
-    var post: TitleDescriptionView = TitleDescriptionView()
+    var author: TitleSubtitleView = TitleSubtitleView(type: .regular)
+    var post: TitleDescriptionView = TitleDescriptionView(type: .regular)
     var lblNumComments: UILabel = UILabel()
     
-    func bind(_ viewModel: PostCellModel) {
+    func bind(_ viewModel: PopulatedPost) {
         backgroundColor = UIColor.clear
-        
-        container.layer.cornerRadius = 8
-        container.layer.masksToBounds = true
+
         container.backgroundColor = UIColor.white
         
-        author.lblTitle.text = viewModel.username
-        author.lblSubtitle.text = viewModel.companyName
+        author.lblTitle.text = viewModel.user.username
+        author.lblSubtitle.text = viewModel.user.email
+
+        post.lblTitle.text = viewModel.post.title
+        post.lblDescription.text = viewModel.post.body
         
-        post.lblTitle.text = viewModel.title
-        post.lblDescription.text = viewModel.body
-        
-        lblNumComments.text = "Comments: \(viewModel.numberOfComments)"
+        lblNumComments.text = "Comments: \(viewModel.comments.count)"
         lblNumComments.font = UIFont(name: "HelveticaNeue-Light", size: 12.0)
         lblNumComments.textAlignment = .right
         

@@ -20,8 +20,8 @@ final class PostsViewModel: ViewModelType {
     
     struct Output {
         let fetching: Driver<Bool>
-        let combinedPosts: Driver<[PostCellModel?]>
-        let selectedPost: Driver<Post>
+        let combinedPosts: Driver<[PopulatedPost?]>
+        let selectedPost: Driver<PopulatedPost?>
         let error: Driver<Error>
     }
     
@@ -62,15 +62,13 @@ final class PostsViewModel: ViewModelType {
         
         let combined = Driver.combineLatest(posts, comments, users) {
             posts, comments, users in
-                posts.map { post -> PostCellModel? in
+                posts.map { post -> PopulatedPost? in
                     let filteredUsers = users.filter { post.userId == $0.userId }
                     let filteredComments = comments.filter { post.postId == $0.postId}
                     if let user = filteredUsers.first {
-                        return PostCellModel(username: user.username,
-                                             companyName: user.company.name,
-                                             title: post.title,
-                                             body: post.body,
-                                             numberOfComments: filteredComments.count)
+                        return PopulatedPost(post: post,
+                                             user: user,
+                                             comments: filteredComments)
                     }
                     return nil
                 }
@@ -82,8 +80,8 @@ final class PostsViewModel: ViewModelType {
         
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
-        let selectedPost = input.selection.withLatestFrom(posts) {
-            indexPath, posts -> Post in
+        let selectedPost = input.selection.withLatestFrom(combinedPosts) {
+            indexPath, posts -> PopulatedPost? in
             let selectedPost = posts[indexPath.row]
             self.navigator.toPost(selectedPost)
             return selectedPost

@@ -14,6 +14,7 @@ target 'PostApp' do
   rx_cocoa
   rx_swift
   pod 'Cartography'
+  pod 'RxDataSources'
 
 end
 

@@ -11,7 +11,7 @@ import Domain
 
 protocol PostsNavigator {
     func toPosts()
-    func toPost(_ post: Post)
+    func toPost(_ post: PopulatedPost?)
 }
 
 class DefaultPostsNavigator: PostsNavigator {
@@ -43,7 +43,14 @@ class DefaultPostsNavigator: PostsNavigator {
         navigationController.pushViewController(postsViewController, animated: true)
     }
     
-    func toPost(_ post: Post) {
-        
+    func toPost(_ post: PopulatedPost?) {
+        if let _post = post {
+            let navigator = DefaultPostDetailNavigator(navigationController: navigationController)
+            let postDetailViewModel = PostDetailViewModel(populatedPost: _post, navigator: navigator)
+            let postDetailViewController = PostDetailViewController()
+            postDetailViewController.viewModel = postDetailViewModel
+            
+            navigationController.pushViewController(postDetailViewController, animated: true)
+        }
     }
 }

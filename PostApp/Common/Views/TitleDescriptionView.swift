@@ -9,13 +9,25 @@
 import Foundation
 import Cartography
 
+enum ViewType {
+    case prominent
+    case regular
+    case subdued
+}
+
 class TitleDescriptionView: UIView {
     
+    var type: ViewType = .regular
     let lblTitle: UILabel = UILabel()
     let lblDescription: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    convenience init(type: ViewType) {
+        self.init()
+        self.type = type
         backgroundColor = UIColor.clear
         setupView()
     }
@@ -26,14 +38,30 @@ class TitleDescriptionView: UIView {
     
     private func setupView() {
         
-        lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         lblTitle.textColor = UIColor.black
         lblTitle.textAlignment = .left
+        lblTitle.numberOfLines = 0
         
-        lblDescription.font = UIFont(name: "HelveticaNeue-Regular", size: 12)
         lblDescription.textColor = UIColor.black
         lblDescription.textAlignment = .left
         lblDescription.numberOfLines = 0
+        
+        switch type {
+        case .prominent:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 24)
+            lblDescription.font = UIFont(name: "HelveticaNeue-Regular", size: 14)
+            break
+        case .regular:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+            lblDescription.font = UIFont(name: "HelveticaNeue-Regular", size: 12)
+            break
+        case .subdued:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Regular", size: 12)
+            lblTitle.textAlignment = .right
+            lblDescription.font = UIFont(name: "HelveticaNeue-Light", size: 12)
+            lblDescription.textAlignment = .right
+            break
+        }
         
         addSubview(lblTitle)
         addSubview(lblDescription)

@@ -11,11 +11,17 @@ import Cartography
 
 class TitleSubtitleView: UIView {
     
+    var type: ViewType = .regular
     let lblTitle: UILabel = UILabel()
     let lblSubtitle: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    convenience init(type: ViewType) {
+        self.init()
+        self.type = type
         backgroundColor = UIColor.clear
         setupView()
     }
@@ -26,14 +32,31 @@ class TitleSubtitleView: UIView {
     
     private func setupView() {
         
-        lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         lblTitle.textColor = UIColor.black
         lblTitle.textAlignment = .left
         
-        lblSubtitle.font = UIFont(name: "HelveticaNeue-Light", size: 12)
         lblSubtitle.textColor = UIColor.black
         lblSubtitle.textAlignment = .left
         lblSubtitle.numberOfLines = 0
+        
+        switch type {
+        case .prominent:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+            lblSubtitle.font = UIFont(name: "HelveticaNeue-Light", size: 12)
+            break
+        case .regular:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+            lblSubtitle.font = UIFont(name: "HelveticaNeue-Light", size: 12)
+            break
+        case .subdued:
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 12)
+            lblTitle.textAlignment = .right
+            lblSubtitle.font = UIFont(name: "HelveticaNeue-Light", size: 12)
+            lblSubtitle.textAlignment = .right
+            break
+        }
+        
+        
         
         addSubview(lblTitle)
         addSubview(lblSubtitle)
