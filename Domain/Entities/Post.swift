@@ -22,6 +22,13 @@ public struct Post: Codable {
         case body
     }
     
+    public init(userId: Int, postId: Int, title: String, body: String) {
+        self.userId = userId
+        self.postId = postId
+        self.title = title
+        self.body = body
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

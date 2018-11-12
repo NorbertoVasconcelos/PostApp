@@ -8,7 +8,6 @@
 
 import Foundation
 import Domain
-import RealmPlatform
 import Realm
 import RealmSwift
 import RxSwift

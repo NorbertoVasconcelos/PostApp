@@ -30,6 +30,17 @@ public struct User: Codable {
         case company
     }
     
+    public init(userId: Int, name: String, username: String, email: String, address: Address, phone: String, website: String, company: Company) {
+        self.userId = userId
+        self.name = name
+        self.username = username
+        self.email = email
+        self.address = address
+        self.phone = phone
+        self.website = website
+        self.company = company
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

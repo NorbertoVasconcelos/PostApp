@@ -24,6 +24,14 @@ public struct Comment: Codable {
         case body
     }
     
+    public init(postId: Int, commentId: Int, name: String, email: String, body: String) {
+        self.postId = postId
+        self.commentId = commentId
+        self.name = name
+        self.email = email
+        self.body = body
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

@@ -18,6 +18,10 @@ public final class UsersNetwork: Domain.UsersUseCase {
         self.network = network
     }
     
+    public func users() -> Observable<[User]> {
+        return network.getItems("users")
+    }
+    
     public func user(with id: Int) -> Observable<User> {
         return network.getItem("users", itemId: String(id))
     }

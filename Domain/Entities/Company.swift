@@ -20,6 +20,12 @@ public struct Company: Codable {
         case bs
     }
     
+    public init(name: String, catchPhrase: String, bs: String) {
+        self.name = name
+        self.catchPhrase = catchPhrase
+        self.bs = bs
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

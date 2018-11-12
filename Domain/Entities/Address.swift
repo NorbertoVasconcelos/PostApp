@@ -23,6 +23,14 @@ public struct Address: Codable {
         case geo
     }
     
+    public init(street: String, suite: String, city: String, zipcode: String, geo: Coordinate) {
+        self.street = street
+        self.suite = suite
+        self.city = city
+        self.zipcode = zipcode
+        self.geo = geo
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

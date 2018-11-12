@@ -18,6 +18,11 @@ public struct Coordinate: Codable {
         case lng
     }
     
+    public init(lat: String, lng: String) {
+        self.lat = lat
+        self.lng = lng
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

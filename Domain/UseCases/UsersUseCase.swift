@@ -10,5 +10,6 @@ import Foundation
 import RxSwift
 
 public protocol UsersUseCase {
+    func users() -> Observable<[User]>
     func user(with id: Int) -> Observable<User>
 }
