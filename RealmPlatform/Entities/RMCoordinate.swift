@@ -36,7 +36,11 @@ extension RMCoordinate: DomainConvertibleType {
     }
 }
 
-extension RMCoordinate: RealmRepresentable {
+extension Coordinate: RealmRepresentable {
+    var id: String {
+        return ""
+    }
+    
     
     func asRealm() -> RMCoordinate {
         return RMCoordinate.build { object in

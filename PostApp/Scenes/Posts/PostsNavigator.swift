@@ -19,15 +19,24 @@ class DefaultPostsNavigator: PostsNavigator {
     var postsUseCase: PostsUseCase
     var usersUseCase: UsersUseCase
     var commentsUseCase: CommentsUseCase
+    var postsCacheUseCase: PostsCacheUseCase
+    var usersCacheUseCase: UsersCacheUseCase
+    var commentsCacheUseCase: CommentsCacheUseCase
     var navigationController: UINavigationController
     
     init(postsUseCase: PostsUseCase,
          usersUseCase: UsersUseCase,
          commentsUseCase: CommentsUseCase,
+         postsCacheUseCase: PostsCacheUseCase,
+         usersCacheUseCase: UsersCacheUseCase,
+         commentsCacheUseCase: CommentsCacheUseCase,
          navigationController: UINavigationController) {
         self.postsUseCase = postsUseCase
         self.usersUseCase = usersUseCase
         self.commentsUseCase = commentsUseCase
+        self.postsCacheUseCase = postsCacheUseCase
+        self.usersCacheUseCase = usersCacheUseCase
+        self.commentsCacheUseCase = commentsCacheUseCase
         self.navigationController = navigationController
     }
     
@@ -35,6 +44,9 @@ class DefaultPostsNavigator: PostsNavigator {
         let postsViewModel = PostsViewModel(postsUseCase: postsUseCase,
                                             usersUseCase: usersUseCase,
                                             commentsUseCase: commentsUseCase,
+                                            postsCacheUseCase: postsCacheUseCase,
+                                            usersCacheUseCase: usersCacheUseCase,
+                                            commentsCacheUseCase: commentsCacheUseCase,
                                             navigator: self)
         
         let postsViewController = PostsViewController()

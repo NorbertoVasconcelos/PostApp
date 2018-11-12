@@ -13,3 +13,10 @@ public protocol CommentsUseCase {
     func comments() -> Observable<[Comment]>
     func comments(for postId: Int) -> Observable<[Comment]>
 }
+
+public protocol CommentsCacheUseCase: CommentsUseCase {
+    func comments() -> Observable<[Comment]>
+    func comments(for postId: Int) -> Observable<[Comment]>
+    func save(comment: Comment) -> Observable<Void>
+    func delete(comment: Comment) -> Observable<Void>
+}

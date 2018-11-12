@@ -38,7 +38,11 @@ extension RMCompany: DomainConvertibleType {
     }
 }
 
-extension RMCompany: RealmRepresentable {
+extension Company: RealmRepresentable {
+    var id: String {
+        return ""
+    }
+    
     
     func asRealm() -> RMCompany {
         return RMCompany.build { object in

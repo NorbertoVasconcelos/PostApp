@@ -9,14 +9,17 @@
 import Foundation
 import Domain
 import NetworkPlatform
+import RealmPlatform
 
 final class Application {
     static let shared = Application()
     
     private let networkUseCaseProvider: Domain.UseCaseProvider
+    private let realmUseCaseProvider: Domain.UseCaseProvider
     
     private init() {
         self.networkUseCaseProvider = NetworkPlatform.UseCaseProvider()
+        self.realmUseCaseProvider = RealmPlatform.UseCaseProvider()
     }
     
     func configureMainInterface(in window: UIWindow) {
@@ -26,6 +29,9 @@ final class Application {
         let postsNavigator = DefaultPostsNavigator(postsUseCase: networkUseCaseProvider.makePostsUseCase(),
                                                    usersUseCase: networkUseCaseProvider.makeUsersUseCase(),
                                                    commentsUseCase: networkUseCaseProvider.makeCommentsUseCase(),
+                                                   postsCacheUseCase: realmUseCaseProvider.makePostsUseCase() as! PostsCacheUseCase,
+                                                   usersCacheUseCase: realmUseCaseProvider.makeUsersUseCase() as! UsersCacheUseCase,
+                                                   commentsCacheUseCase: realmUseCaseProvider.makeCommentsUseCase() as! CommentsCacheUseCase,
                                                    navigationController: navigationController)
         
         window.rootViewController = navigationController

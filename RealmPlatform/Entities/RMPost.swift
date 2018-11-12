@@ -40,7 +40,7 @@ extension RMPost: DomainConvertibleType {
     }
 }
 
-extension RMPost: RealmRepresentable {
+extension Post: RealmRepresentable {
     var id: String {
         return String(postId)
     }

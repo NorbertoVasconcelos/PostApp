@@ -28,15 +28,25 @@ final class PostsViewModel: ViewModelType {
     private let postsUseCase: PostsUseCase
     private let usersUseCase: UsersUseCase
     private let commentsUseCase: CommentsUseCase
+    private let postsCacheUseCase: PostsCacheUseCase
+    private let usersCacheUseCase: UsersCacheUseCase
+    private let commentsCacheUseCase: CommentsCacheUseCase
     private let navigator: PostsNavigator
+    private var disposeBag: DisposeBag = DisposeBag()
     
     init(postsUseCase: PostsUseCase,
          usersUseCase: UsersUseCase,
          commentsUseCase: CommentsUseCase,
+         postsCacheUseCase: PostsCacheUseCase,
+         usersCacheUseCase: UsersCacheUseCase,
+         commentsCacheUseCase: CommentsCacheUseCase,
          navigator: PostsNavigator) {
         self.postsUseCase = postsUseCase
         self.usersUseCase = usersUseCase
         self.commentsUseCase = commentsUseCase
+        self.postsCacheUseCase = postsCacheUseCase
+        self.usersCacheUseCase = usersCacheUseCase
+        self.commentsCacheUseCase = commentsCacheUseCase
         self.navigator = navigator
     }
     
@@ -44,21 +54,34 @@ final class PostsViewModel: ViewModelType {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
+        let cachedPosts = self.postsCacheUseCase.posts().asDriverOnErrorJustComplete()
+        let cachedUsers = self.usersCacheUseCase.users().asDriverOnErrorJustComplete()
+        let cachedComments = self.commentsCacheUseCase.comments().asDriverOnErrorJustComplete()
+
         let posts = self.postsUseCase.posts()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriverOnErrorJustComplete()
+            .asDriver(onErrorDriveWith: { cachedPosts }())
+            .do(onNext: {
+                let _ = $0.map { self.postsCacheUseCase.save(post: $0).subscribe().disposed(by: self.disposeBag) }
+            })
         
         
         let comments = self.commentsUseCase.comments()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriverOnErrorJustComplete()
+            .asDriver(onErrorDriveWith: { cachedComments }())
+            .do(onNext: {
+                let _ = $0.map { self.commentsCacheUseCase.save(comment: $0).subscribe().disposed(by: self.disposeBag) }
+            })
         
         let users = self.usersUseCase.users()
             .trackActivity(activityIndicator)
             .trackError(errorTracker)
-            .asDriverOnErrorJustComplete()
+            .asDriver(onErrorDriveWith: { cachedUsers }())
+            .do(onNext: {
+                let _ = $0.map { self.usersCacheUseCase.save(user: $0).subscribe().disposed(by: self.disposeBag) }
+            })
         
         let combined = Driver.combineLatest(posts, comments, users) {
             posts, comments, users in

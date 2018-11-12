@@ -84,6 +84,10 @@
 		DE31F6812199C600003ADE1B /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6802199C600003ADE1B /* PostDetailView.swift */; };
 		DE31F6832199C6C5003ADE1B /* PostDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6822199C6C5003ADE1B /* PostDetailNavigator.swift */; };
 		DE31F6862199D854003ADE1B /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6852199D854003ADE1B /* CommentTableViewCell.swift */; };
+		DE31F6892199FF08003ADE1B /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6882199FF08003ADE1B /* UseCaseProvider.swift */; };
+		DE31F68B2199FFB7003ADE1B /* PostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F68A2199FFB7003ADE1B /* PostsUseCase.swift */; };
+		DE31F68D219A0235003ADE1B /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F68C219A0235003ADE1B /* UsersUseCase.swift */; };
+		DE31F68F219A0240003ADE1B /* CommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F68E219A0240003ADE1B /* CommentsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +279,10 @@
 		DE31F6802199C600003ADE1B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		DE31F6822199C6C5003ADE1B /* PostDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailNavigator.swift; sourceTree = "<group>"; };
 		DE31F6852199D854003ADE1B /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		DE31F6882199FF08003ADE1B /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		DE31F68A2199FFB7003ADE1B /* PostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsUseCase.swift; sourceTree = "<group>"; };
+		DE31F68C219A0235003ADE1B /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
+		DE31F68E219A0240003ADE1B /* CommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +378,7 @@
 		5A5B00032198C74A001035B5 /* RealmPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				DE31F6872199FEEE003ADE1B /* UseCases */,
 				5A5B00462198DE82001035B5 /* Entities */,
 				5A5B003A2198DE2D001035B5 /* Repository */,
 				5A5B003C2198DE2D001035B5 /* Utility */,
@@ -708,6 +717,17 @@
 				DE31F6852199D854003ADE1B /* CommentTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE31F6872199FEEE003ADE1B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DE31F6882199FF08003ADE1B /* UseCaseProvider.swift */,
+				DE31F68A2199FFB7003ADE1B /* PostsUseCase.swift */,
+				DE31F68C219A0235003ADE1B /* UsersUseCase.swift */,
+				DE31F68E219A0240003ADE1B /* CommentsUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1296,15 +1316,19 @@
 				5A5B00532198E290001035B5 /* RMCompany.swift in Sources */,
 				5A5B004B2198DEC2001035B5 /* RealmRepresentable.swift in Sources */,
 				5A5B00422198DE2D001035B5 /* Repository.swift in Sources */,
+				DE31F68B2199FFB7003ADE1B /* PostsUseCase.swift in Sources */,
 				5A5B004D2198E218001035B5 /* RMPost.swift in Sources */,
 				5A5B00512198E244001035B5 /* RMComment.swift in Sources */,
 				5A5B00552198E29D001035B5 /* RMAddress.swift in Sources */,
 				5A5B00442198DE2D001035B5 /* Observable+Ext.swift in Sources */,
 				5A5B00432198DE2D001035B5 /* RunLoopThreadScheduler.swift in Sources */,
 				5A5B00572198E2BB001035B5 /* RMCoordinate.swift in Sources */,
+				DE31F68D219A0235003ADE1B /* UsersUseCase.swift in Sources */,
+				DE31F6892199FF08003ADE1B /* UseCaseProvider.swift in Sources */,
 				5A5B004F2198E22E001035B5 /* RMUser.swift in Sources */,
 				5A5B004A2198DEC2001035B5 /* DomainConvertibleType.swift in Sources */,
 				5A5B00452198DE2D001035B5 /* Realm+Ext.swift in Sources */,
+				DE31F68F219A0240003ADE1B /* CommentsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

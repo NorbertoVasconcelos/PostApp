@@ -13,3 +13,10 @@ public protocol UsersUseCase {
     func users() -> Observable<[User]>
     func user(with id: Int) -> Observable<User>
 }
+
+public protocol UsersCacheUseCase: UsersUseCase {
+    func users() -> Observable<[User]>
+    func user(with id: Int) -> Observable<User>
+    func save(user: User) -> Observable<Void>
+    func delete(user: User) -> Observable<Void>
+}

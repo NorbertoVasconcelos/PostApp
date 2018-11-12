@@ -13,3 +13,10 @@ public protocol PostsUseCase {
     func posts() -> Observable<[Post]>
     func post(with id: Int) -> Observable<Post>
 }
+
+public protocol PostsCacheUseCase: PostsUseCase {
+    func posts() -> Observable<[Post]>
+    func post(with id: Int) -> Observable<Post>
+    func save(post: Post) -> Observable<Void>
+    func delete(post: Post) -> Observable<Void>
+}

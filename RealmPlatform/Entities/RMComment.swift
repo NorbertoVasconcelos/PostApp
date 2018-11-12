@@ -43,7 +43,7 @@ extension RMComment: DomainConvertibleType {
     }
 }
 
-extension RMComment: RealmRepresentable {
+extension Comment: RealmRepresentable {
     var id: String {
         return String(commentId)
     }    

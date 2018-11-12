@@ -45,7 +45,11 @@ extension RMAddress: DomainConvertibleType {
     }
 }
 
-extension RMAddress: RealmRepresentable {
+extension Address: RealmRepresentable {
+    var id: String {
+        return ""
+    }
+    
     
     func asRealm() -> RMAddress {
         return RMCoordinate.build { object in
@@ -54,7 +58,7 @@ extension RMAddress: RealmRepresentable {
             object.suite = suite
             object.city = city
             object.zipcode = zipcode
-            object.geo = geo
+            object.geo = geo.asRealm()
         }
     }
 }

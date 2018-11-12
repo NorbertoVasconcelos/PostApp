@@ -52,7 +52,7 @@ extension RMUser: DomainConvertibleType {
     }
 }
 
-extension RMUser: RealmRepresentable {
+extension User: RealmRepresentable {
     var id: String {
         return String(userId)
     }
@@ -63,10 +63,10 @@ extension RMUser: RealmRepresentable {
             object.name = name
             object.username = username
             object.email = email
-            object.address = address
+            object.address = address.asRealm()
             object.phone = phone
             object.website = website
-            object.company = company
+            object.company = company.asRealm()
         }
     }
 }
