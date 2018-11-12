@@ -13,8 +13,8 @@ public final class UseCaseProvider: Domain.UseCaseProvider {
     
     let networkProvider: NetworkProvider
     
-    init(networkProvider: NetworkProvider) {
-        self.networkProvider = networkProvider
+    public init() {
+        self.networkProvider = NetworkProvider()
     }
     
     public func makePostsUseCase() -> Domain.PostsUseCase {

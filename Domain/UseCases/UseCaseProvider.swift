@@ -10,4 +10,6 @@ import Foundation
 
 public protocol UseCaseProvider {
     func makePostsUseCase() -> PostsUseCase
+    func makeUsersUseCase() -> UsersUseCase
+    func makeCommentsUseCase() -> CommentsUseCase
 }

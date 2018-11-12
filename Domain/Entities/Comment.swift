@@ -10,11 +10,11 @@ import Foundation
 
 public struct Comment: Codable {
     
-    var postId: Int
-    var commentId: Int
-    var name: String
-    var email: String
-    var body: String
+    public var postId: Int
+    public var commentId: Int
+    public var name: String
+    public var email: String
+    public var body: String
     
     private enum CodingKeys: String, CodingKey {
         case postId

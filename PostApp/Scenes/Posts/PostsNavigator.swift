@@ -16,17 +16,26 @@ protocol PostsNavigator {
 
 class DefaultPostsNavigator: PostsNavigator {
     
-    var useCase: PostsUseCase
+    var postsUseCase: PostsUseCase
+    var usersUseCase: UsersUseCase
+    var commentsUseCase: CommentsUseCase
     var navigationController: UINavigationController
     
-    init(useCase: PostsUseCase,
+    init(postsUseCase: PostsUseCase,
+         usersUseCase: UsersUseCase,
+         commentsUseCase: CommentsUseCase,
          navigationController: UINavigationController) {
-        self.useCase = useCase
+        self.postsUseCase = postsUseCase
+        self.usersUseCase = usersUseCase
+        self.commentsUseCase = commentsUseCase
         self.navigationController = navigationController
     }
     
     func toPosts() {
-        let postsViewModel = PostsViewModel(useCase: useCase, navigator: self)
+        let postsViewModel = PostsViewModel(postsUseCase: postsUseCase,
+                                            usersUseCase: usersUseCase,
+                                            commentsUseCase: commentsUseCase,
+                                            navigator: self)
         
         let postsViewController = PostsViewController()
         postsViewController.viewModel = postsViewModel

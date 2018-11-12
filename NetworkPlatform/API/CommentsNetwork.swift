@@ -17,6 +17,10 @@ public final class CommentsNetwork: Domain.CommentsUseCase {
     init(network: Network<Comment>) {
         self.network = network
     }
+    
+    public func comments() -> Observable<[Comment]> {
+        return network.getItems("comments")
+    }
 
     public func comments(for postId: Int) -> Observable<[Comment]> {
         return network.getItems("comments", for: "postId", id: String(postId))

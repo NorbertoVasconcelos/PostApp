@@ -10,17 +10,17 @@ import Foundation
 
 public struct User: Codable {
     
-    var userId: Int
-    var name: String
-    var username: String
-    var email: String
-    var address: Address
-    var phone: String
-    var website: String
-    var company: Company
+    public var userId: Int
+    public var name: String
+    public var username: String
+    public var email: String
+    public var address: Address
+    public var phone: String
+    public var website: String
+    public var company: Company
     
     private enum CodingKeys: String, CodingKey {
-        case userId
+        case userId = "id"
         case name
         case username
         case email

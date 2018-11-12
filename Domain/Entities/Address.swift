@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Address: Codable {
-    var street: String
-    var suite: String
-    var city: String
-    var zipcode: String
-    var geo: Coordinate
+    public var street: String
+    public var suite: String
+    public var city: String
+    public var zipcode: String
+    public var geo: Coordinate
     
     private enum CodingKeys: String, CodingKey {
         case street

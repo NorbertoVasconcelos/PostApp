@@ -10,10 +10,10 @@ import Foundation
 
 public struct Post: Codable {
     
-    var userId: Int
-    var postId: Int
-    var title: String
-    var body: String
+    public var userId: Int
+    public var postId: Int
+    public var title: String
+    public var body: String
     
     private enum CodingKeys: String, CodingKey {
         case userId

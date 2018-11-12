@@ -50,8 +50,6 @@
 		5A5B006F2198F349001035B5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B006B2198F349001035B5 /* Reusable.swift */; };
 		5A5B00702198F349001035B5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B006C2198F349001035B5 /* ActivityIndicator.swift */; };
 		5A5BFF7B21989544001035B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7A21989544001035B5 /* AppDelegate.swift */; };
-		5A5BFF7D21989544001035B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7C21989544001035B5 /* ViewController.swift */; };
-		5A5BFF8021989544001035B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5BFF7E21989544001035B5 /* Main.storyboard */; };
 		5A5BFF8221989545001035B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5BFF8121989545001035B5 /* Assets.xcassets */; };
 		5A5BFF8521989545001035B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5BFF8321989545001035B5 /* LaunchScreen.storyboard */; };
 		5A5BFF9021989545001035B5 /* PostAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BFF8F21989545001035B5 /* PostAppTests.swift */; };
@@ -74,6 +72,13 @@
 		5A5BFFF52198C73E001035B5 /* NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5BFFE02198C73E001035B5 /* NetworkPlatform.framework */; };
 		5A5BFFF62198C73E001035B5 /* NetworkPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5BFFE02198C73E001035B5 /* NetworkPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C9B9CA21D7FC4181F43F272 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21400448E83B7890DC582D7 /* Pods_Domain.framework */; };
+		DE31F66F2199924E003ADE1B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F66E2199924E003ADE1B /* PostTableViewCell.swift */; };
+		DE31F67121999425003ADE1B /* PostCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F67021999425003ADE1B /* PostCellModel.swift */; };
+		DE31F674219996EC003ADE1B /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F673219996EC003ADE1B /* TitleSubtitleView.swift */; };
+		DE31F67621999784003ADE1B /* TitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F67521999784003ADE1B /* TitleDescriptionView.swift */; };
+		DE31F6782199984A003ADE1B /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31F6772199984A003ADE1B /* UIView+Ext.swift */; };
+		DE31F67921999F79003ADE1B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5BFFAD219895CD001035B5 /* Domain.framework */; };
+		DE31F67A21999F84003ADE1B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5BFFAD219895CD001035B5 /* Domain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,8 +224,6 @@
 		5A5B006C2198F349001035B5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		5A5BFF7721989544001035B5 /* PostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5BFF7A21989544001035B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A5BFF7C21989544001035B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A5BFF7F21989544001035B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A5BFF8121989545001035B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5BFF8421989545001035B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5BFF8621989545001035B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +260,11 @@
 		C8965E147AF18DEFAF70FAB0 /* Pods_RealmPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21400448E83B7890DC582D7 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26276C9D97AB697EB5D0FEC /* Pods-NetworkPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkPlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkPlatform/Pods-NetworkPlatform.release.xcconfig"; sourceTree = "<group>"; };
+		DE31F66E2199924E003ADE1B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		DE31F67021999425003ADE1B /* PostCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellModel.swift; sourceTree = "<group>"; };
+		DE31F673219996EC003ADE1B /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
+		DE31F67521999784003ADE1B /* TitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionView.swift; sourceTree = "<group>"; };
+		DE31F6772199984A003ADE1B /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE31F67921999F79003ADE1B /* Domain.framework in Frameworks */,
 				3196A54682254EEA83545AB1 /* Pods_NetworkPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE31F67A21999F84003ADE1B /* Domain.framework in Frameworks */,
 				0785FD586119FB8A2EE08DC7 /* Pods_RealmPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +476,7 @@
 		5A5B00592198F1B1001035B5 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				DE31F66D2199922E003ADE1B /* Cells */,
 				5A5B005A2198F1DD001035B5 /* PostsViewController.swift */,
 				5A5B005C2198F1FC001035B5 /* PostsViewModel.swift */,
 				5A5B005E2198F211001035B5 /* PostsView.swift */,
@@ -477,6 +488,7 @@
 		5A5B00622198F2AB001035B5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DE31F672219996D1003ADE1B /* Views */,
 				5A5B00672198F2F7001035B5 /* ViewModelType.swift */,
 			);
 			path = Common;
@@ -497,6 +509,7 @@
 				5A5B00692198F349001035B5 /* ErrorTracker.swift */,
 				5A5B006A2198F349001035B5 /* Observable+Ext.swift */,
 				5A5B006B2198F349001035B5 /* Reusable.swift */,
+				DE31F6772199984A003ADE1B /* UIView+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -543,8 +556,6 @@
 				5A5B00642198F2C5001035B5 /* Utils */,
 				5A5B00582198F1A7001035B5 /* Scenes */,
 				5A5BFF7A21989544001035B5 /* AppDelegate.swift */,
-				5A5BFF7C21989544001035B5 /* ViewController.swift */,
-				5A5BFF7E21989544001035B5 /* Main.storyboard */,
 				5A5BFF8121989545001035B5 /* Assets.xcassets */,
 				5A5BFF8321989545001035B5 /* LaunchScreen.storyboard */,
 				5A5BFF8621989545001035B5 /* Info.plist */,
@@ -648,6 +659,24 @@
 				2A95B45D7BA242D207A26637 /* Pods-RealmPlatform.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE31F66D2199922E003ADE1B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE31F66E2199924E003ADE1B /* PostTableViewCell.swift */,
+				DE31F67021999425003ADE1B /* PostCellModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE31F672219996D1003ADE1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE31F673219996EC003ADE1B /* TitleSubtitleView.swift */,
+				DE31F67521999784003ADE1B /* TitleDescriptionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -945,7 +974,6 @@
 			files = (
 				5A5BFF8521989545001035B5 /* LaunchScreen.storyboard in Resources */,
 				5A5BFF8221989545001035B5 /* Assets.xcassets in Resources */,
-				5A5BFF8021989544001035B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,17 +1165,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE31F6782199984A003ADE1B /* UIView+Ext.swift in Sources */,
 				5A5B005D2198F1FC001035B5 /* PostsViewModel.swift in Sources */,
 				5A5B006F2198F349001035B5 /* Reusable.swift in Sources */,
+				DE31F66F2199924E003ADE1B /* PostTableViewCell.swift in Sources */,
 				5A5B00662198F2E5001035B5 /* Application.swift in Sources */,
 				5A5B00612198F221001035B5 /* PostsNavigator.swift in Sources */,
 				5A5B00702198F349001035B5 /* ActivityIndicator.swift in Sources */,
+				DE31F67621999784003ADE1B /* TitleDescriptionView.swift in Sources */,
 				5A5B005B2198F1DD001035B5 /* PostsViewController.swift in Sources */,
 				5A5B006E2198F349001035B5 /* Observable+Ext.swift in Sources */,
 				5A5B006D2198F349001035B5 /* ErrorTracker.swift in Sources */,
 				5A5B00682198F2F7001035B5 /* ViewModelType.swift in Sources */,
-				5A5BFF7D21989544001035B5 /* ViewController.swift in Sources */,
 				5A5B005F2198F211001035B5 /* PostsView.swift in Sources */,
+				DE31F67121999425003ADE1B /* PostCellModel.swift in Sources */,
+				DE31F674219996EC003ADE1B /* TitleSubtitleView.swift in Sources */,
 				5A5BFF7B21989544001035B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,14 +1329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A5BFF7E21989544001035B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A5BFF7F21989544001035B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A5BFF8321989545001035B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

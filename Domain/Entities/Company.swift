@@ -10,9 +10,9 @@ import Foundation
 
 public struct Company: Codable {
     
-    var name: String
-    var catchPhrase: String
-    var bs: String
+    public var name: String
+    public var catchPhrase: String
+    public var bs: String
     
     private enum CodingKeys: String, CodingKey {
         case name

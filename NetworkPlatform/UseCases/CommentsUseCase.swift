@@ -18,6 +18,10 @@ public final class CommentsUseCase: Domain.CommentsUseCase {
         self.network = network
     }
 
+    public func comments() -> Observable<[Comment]> {
+        return network.comments()
+    }
+    
     public func comments(for postId: Int) -> Observable<[Comment]> {
         return network.comments(for: postId)
     }
